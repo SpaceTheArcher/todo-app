@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+		<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/static/css/site.css">
+	</head>
+	<body>
+
+	<section class="row_display" style="width:100%;height:100%;">
+
+	<div class="column">
+
+		{% for act in usr_acts %}
+		<div class="card_container">
+			
+			<div class="card_header">
+				<h1> {{ act.title }} </h1>
+			</div>
+
+			<div class="card_body">
+				<p>
+				{{ act.description }}
+				</p>
+			</div>
+
+			<div class="card_members row_display">
+				{% for user in act.names %}
+					<div class="un">
+						{{ user }}
+					</div>
+				{% endfor %} 
+			</div>
+
+		</div>
+		{% endfor %}
+
+	</div>
+
+	</section>
+	
+	</body>
+</html>
