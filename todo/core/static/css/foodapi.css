@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+div::-webkit-scrollbar {
+    width: 5px;
+}
+
+div::-webkit-scrollbar-track {
+    background-color: white; 
+}
+
+div::-webkit-scrollbar-thumb {
+	background-color: darkgray;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+a {
+	color: blue;
+}
+
+a:hover {
+	color: deepskyblue;
+}
+
+h3 {
+	font-size: 17px;
+	margin: 0px auto;
+}
+
+ul {
+	padding-left: 10px;
+}
+
+li {
+	font-size: 14px;
+	list-style: none;
+	text-decoration: none;
+}
+
+.input_box {
+	display: flex;
+	flex-flow: column nowrap;
+	height: 40px;
+	width: 250px;
+}
+
+.input_box label {
+	background-color: white;
+	display: inline;
+	font-size: 12px;
+	font-weight: 600;
+	margin: auto auto -6px 10px;
+	width: auto;
+	z-index: 1;
+}
+
+.input_box input {
+	border: 1px solid gray;
+	padding: 5px;
+}
+
+.input_box input:focus {
+	background-color: #eee;
+	outline: none;
+}
+
+.hit_container {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 5px;
+	height: 260px;
+	width: 48%;
+}
+
+.intro_box {
+	font-size: 15px;
+	margin: 10px;
+	width: 30%;
+}
+
+.ingr_box {
+	font-size: 15px;
+	margin: 10px;
+	overflow: hidden;
+	width: 70%;
+}
+
+.recipe_heading {
+	text-align: center;
+	margin: 5px;
+}
+
+.img_container {
+	height: 120px;
+	margin: 5px auto;
+	width: 120px;
+}
+
+img {
+	object-fit: contain;
+	height: auto;
+	width: 100%;
+}
+
+.ingredient_list {
+	margin: 5px auto;
+    height: 80%;
+    padding-right: 30px;
+	overflow-y: scroll;
+}
+
+/* Extra content */
+
+.center_div {
+	margin: auto;
+	justify-content: center;
+	width: 70%;
+}
+
+.center_div div {
+	margin: auto 10px;
+}
+
+.flex_rw_nw {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.flex_rw {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 5px auto;
+	width: 95%;
+}
+
+.btn {
+	background-color: white;
+	border: 1px solid black;
+	font-weight: 600;
+	margin: 10px auto 0;
+	transition: .4s;
+	height: 30px;
+	width: 150px;
+}
+
+.btn:hover {
+	color: white;
+	background-color: black;
+}

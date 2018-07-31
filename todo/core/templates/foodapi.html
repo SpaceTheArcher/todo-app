@@ -1,0 +1,121 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" href="/static/css/foodapi.css"/>
+
+</head>
+<body>
+
+	<h1> Food Recipe API </h1>	
+
+	<!-- 
+	my_id = 'a8f0a160'
+	my_key = '757c599ff766be917054f3e2ef450a56'
+	-->
+	
+	<form method='POST'>
+
+	{% csrf_token %}
+
+	<div class="flex_rw_nw center_div">
+
+	<div>
+
+	<div class="input_box">
+	{{ form.api_key.label_tag }}
+	{{ form.api_key }}
+	</div>
+
+	<div class="input_box">
+	{{ form.api_id.label_tag }}
+	{{ form.api_id }}
+	</div>
+
+	<div class="input_box">
+	{{ form.from_.label_tag }}
+	{{ form.from_ }}
+	</div>
+
+	<div class="input_box">
+	{{ form.to.label_tag }}
+	{{ form.to }}
+	</div>
+
+	</div>
+
+	<div>
+
+	<div class="input_box">
+	{{ form.ingr.label_tag }}
+	{{ form.ingr }}
+	</div>
+
+	<div class="input_box">
+	{{ form.calories.label_tag }}
+	{{ form.calories }}
+	</div class="input_box">
+
+	<div class="input_box">
+	{{ form.query.label_tag }}
+	{{ form.query }}
+	</div class="input_box">
+
+	<div class="input_box">
+		<button class="btn" type='submit'>
+			Enviar
+		</button>
+	</div>
+
+	</div>
+
+	</div>
+
+	</form>
+
+	<div class="flex_rw">
+
+	{% for hit in result %}
+
+	<div class="hit_container flex_rw_nw">
+
+		<div class="intro_box">
+
+			<div class="recipe_heading">
+				<h3>{{ hit.recipe.label}} Recipe</h3>
+				<span>by: {{ hit.recipe.source }}</span>
+				<div>
+					<a targe="_blank" href="{{ hit.recipe.uri }}">Source</a>
+				</div>
+			</div>
+
+			<div class="img_container">
+				<img src="{{ hit.recipe.image }}" alt="error">
+			</div>
+
+		</div>
+
+		<div class="ingr_box">
+			
+			<h3>Ingredients:</h3>
+			
+			<div class="ingredient_list">
+				<ul>
+				{% for ingredient in hit.recipe.ingredientLines %}
+
+					<li>- {{ ingredient }}</li>
+
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	{% endfor %}
+
+	</div>
+
+</body>
+
+</html>

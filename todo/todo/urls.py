@@ -19,5 +19,6 @@ from core.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index')
+    path('', index, name='index'),
+    path('foodapi/', foodapi, name='foodapi'),
 ]
